@@ -9,7 +9,8 @@
     "dev": "tsc --watch",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
-    "format": "prettier --write \"src/**/*.{ts,js,json}\""
+    "format": "prettier --write \"src/**/*.{ts,js,json}\"",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
@@ -23,8 +24,16 @@
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",
     "globals": "^16.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.31.1"
-  }
+  },
+  "lint-staged": {
+  "src/**/*.{ts,js}": [
+    "eslint --fix",
+    "prettier --write"
+  ]
+}
 }

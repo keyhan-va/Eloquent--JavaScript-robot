@@ -10,8 +10,7 @@
     "lint:fix": "eslint src --ext .ts --fix",
     "format": "prettier --write \"src/**/*.{ts,js,json}\"",
     "prepare": "husky",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
+    "test:unit": "vitest",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui"
   },

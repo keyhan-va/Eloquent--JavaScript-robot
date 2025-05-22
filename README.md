@@ -35,3 +35,10 @@ npx playwright test
 http-server -p 8080
 ```
 
+### typescript compile
+
+```
+npx tsc
+```
+
+

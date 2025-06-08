@@ -1,0 +1,58 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+#map {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 20px auto;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+}
+
+.location {
+  width: 10px;
+  height: 10px;
+  background-color: blue;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.location-label {
+  position: absolute;
+  font-size: 12px;
+  color: #333;
+  transform: translate(-50%, -50%);
+}
+
+.parcel {
+  width: 12px;
+  height: 12px;
+  background-color: orange;
+  border: 2px solid #aa5500;
+  border-radius: 3px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+#robot {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+

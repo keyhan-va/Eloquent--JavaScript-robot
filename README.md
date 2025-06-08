@@ -27,3 +27,18 @@ Run all tests in headless mode meaning no browser will open up when running the 
 ```
 npx playwright test
 ```
+
+
+### Run local server
+
+```
+http-server -p 8080
+```
+
+### typescript compile
+
+```
+npx tsc
+```
+
+

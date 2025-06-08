@@ -1,20 +1,19 @@
 import { test, expect } from '@playwright/test';
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test('Robot picks up and removes parcels from DOM permanently', async ({ page }) => {
+  await page.goto('http://localhost:8080/src/');
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-});
+  const startButton = page.locator('#startButton');
+  await expect(startButton).toBeVisible();
+  await startButton.click();
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+  const totalParcels = 6;
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
-
-  // Expects page to have a heading with the name of Installation.
-  await expect(
-    page.getByRole('heading', { name: 'Installation' }),
-  ).toBeVisible();
+  for (let i = 0; i < totalParcels; i++) {
+    const parcel = page.locator(`#parcel-${i}`);
+    await expect(parcel).toBeVisible();
+    await page.waitForSelector(`#parcel-${i}`, { state: 'detached' });
+    await expect(parcel).not.toBeAttached();
+  }
+  console.log('✅ All parcels were picked up and removed from the DOM!');
 });
